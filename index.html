@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jepordy</title>
+    <link rel="stylesheet" href="cssStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+		<form class="signup">
+		<label for="fname" class="req">First Name</label>
+		<input type="text" id="fname" class ="form_data" size="25" required>
+		<label for="lname" class="req">Last Name</label>
+		<input type="text" id="lname" class ="form_data" size="25" required>
+		<br><br>
+		<label for="dob" class="req">Date of Birth: </label>
+		<input type="date" id="dob" class ="form_data" required> 
+		<label for="age" class="req">Age: </label>
+		<input type="number" id="age" class ="form_data">
+		<br><br>
+		<label for="email" class="req">Email: </label>
+		<input type="email" id="email" class ="form_data" size="25" required>
+		<label for="gender" class="req">Select Gender: </label>
+		<select id="gender" class ="form_data" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select> 	
+		<br><br>
+		<label>Address</label><br><br>
+		<label for="street">Street: </label>
+		<input type="text" id="street" class ="form_data" size="25"><br><br>
+		<label for="town">Town/City</label>
+		<input type="text" id="town" class ="form_data" size="25"><br><br>
+		<label for="country">Country</label>
+		<input type="text" id="country" class ="form_data" size="25"><br><br>
+		<br><br>
+		<label for="edc_level" class="req">Education Level</label>
+		<select id="edc_level" class ="form_data" required>
+			<option value="hs">High School</option>
+			<option value="college">College/University</option>
+			<option value="primary">Primary School</option>
+		</select> 
+		<br><br>
+		<label for="photo">Photo</label>
+		<input type="file" id="photo" class ="form_data">
+		<br><br>
+		<button id="reg" class ="form_data" >Register</button>
+		<button id="end_btn">End Game</button>
+		<button id="start_btn">Start Game</button>
+		<button id="result">Results</button>
+		<br><br>
+		<label>Stat For Current Player</label><br>
+		<textarea id="showpercentage">
+		</textarea><br>
+		<label>Stat For All players</label><br>
+		<textarea id="showallplayers">	
+		</textarea>
+		<br>
+		<br>
+		<div id="showcharts">
+				<h1>Player Demographic</h1>
+		<table>
+			<tr>
+				<td>Male</td>
+				<td id="malebar"></td>
+			</tr>
+			<tr>
+			<td>Female</td>
+			<td id="femalebar"></td>
+			</tr>
+		</table>
+			<br>
+		<table>
+			<tr>
+				<td>Under 20</td>
+				<td id="agerange1"></td>
+			</tr>
+			<tr>
+				<td>Between 20 and 39</td>
+				<td id="agerange2"></td>
+			</tr>
+			<tr>
+				<td>Between 40 and 69</td>
+				<td id="agerange3"></td>
+			</tr>
+			<tr>
+				<td>Over 60</td>
+				<td id="agerange4"></td>
+			</tr>
+		</table>
+	</div>
+	</form>
+	
+  <br><br>
+      <h1>Jepordy</h1>
+    <div>
+        <span id="timer">
+          <span id="time">60 </span>    
+        </span>
+      </div><br>
+    <div id="game"></div>
+
+    <div id="input"><br>
+        <form>
+            <div class="word">
+                <label for="double">enter amount:</label>
+            <input type="text" id="double" disabled >
+            </div><br>
+            <div class="send">
+                <button id="submit" type="button" onclick="doubleup()" disabled>submit</button>
+            </div><br>
+            <div class="send">
+                <button id="final-jepordy" type="button" onclick="finalJepordy()" disabled>Final Jepordy</button>
+            </div>
+        </form>
+        
+    </div>
+    <h2>Score : <span id="score"></span></h2><br>
+
+<script src="jepordy.js"></script>
+</body>
+</html>
